@@ -17,9 +17,17 @@ struct ContentView: View {
         NavigationView {
             List(items, id: \.self) { item in
                 
-                NavigationLink(destination: Text("\(item)"), tag: item, selection: $selectedItem) {
+                NavigationLink(destination: VStack {
+                    Text("\(item)")
+                    Button {
+                        self.selectedItem = 4
+                    } label: { 
+                        Text("Switch to page 4")
+                    }
+
+                }, tag: item, selection: $selectedItem) {
                     Text("HERE: \(item)")
-                }.isDetailLink(false)
+                }.isDetailLink(true)
                 
             }
         }
