@@ -27,7 +27,7 @@ struct ContentView: View {
 
                 }, tag: item, selection: $selectedItem) {
                     Text("HERE: \(item)")
-                }.isDetailLink(true)
+                }
                 
             }
         }
